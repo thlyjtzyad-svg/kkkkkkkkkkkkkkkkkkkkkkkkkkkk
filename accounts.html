@@ -17,14 +17,26 @@ body {
     color: white;
 }
 
+/* خلفية الصفحة */
+.bg-dark {
+    background: rgba(0,0,0,0.82);
+    backdrop-filter: blur(6px);
+    min-height: 100vh;
+    padding-bottom: 180px;
 }
 
+/* عنوان */
+.title {
+    font-size: 55px;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 40px;
 }
 
-/* زر الرجوع أسفل الصفحة */
+/* زر الرجوع – نفس شكل الصفحة الرئيسية */
 .back-btn {
     background: linear-gradient(45deg, #ff003c, #cc0030);
-    padding: 30px 80px;
+    padding: 30px 75px;
     border-radius: 50px;
     text-decoration: none;
     color: white;
@@ -32,53 +44,52 @@ body {
     font-weight: bold;
     display: block;
     width: max-content;
-    margin: 60px auto 0 auto;
+    margin: 70px auto 0 auto;
     box-shadow: 0 0 30px rgba(255,0,60,0.7);
     animation: pulse 1.8s infinite;
 }
 
-/* حركة نبض */
 @keyframes pulse {
-    0%   { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,60,0.6); }
-    50%  { transform: scale(1.07); box-shadow: 0 0 45px rgba(255,0,60,1); }
-    100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,60,0.6); }
+    0% { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,60,0.5); }
+    50% { transform: scale(1.08); box-shadow: 0 0 45px rgba(255,0,60,1); }
+    100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,60,0.5); }
 }
 
 /* شبكة الحسابات */
 .grid {
     padding: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 55px;
 }
 
 /* البطاقة */
 .card {
     background: rgba(0,0,0,0.75);
-    border-radius: 50px;
+    border-radius: 40px;
     overflow: hidden;
     cursor: pointer;
-    border: 10px solid #ff003c;
+    border: 8px solid #000000; /* ← تم تغيير الإطار إلى اللون الأسود */
     transition: 0.3s;
 }
 
 /* الصور */
 .card img {
     width: 100%;
-    height: 650px;
+    height: 600px;
     object-fit: cover;
-    border-bottom: 8px solid #ff003c;
+    border-bottom: 8px solid #000000; /* ← حواف سوداء */
 }
 
 /* اسم الحساب */
 .card-content {
-    padding: 40px;
-    font-size: 50px;
+    padding: 35px;
+    font-size: 45px;
     text-align: center;
     font-weight: 900;
 }
 
-/* مودال */
+/* المودال */
 .modal {
     display: none;
     position: fixed;
@@ -90,7 +101,7 @@ body {
 
 .modal-box {
     background: #111;
-    padding: 50px;
+    padding: 40px;
     width: 90%;
     max-width: 700px;
     border-radius: 30px;
@@ -99,35 +110,32 @@ body {
 
 .modal-box img {
     width: 100%;
-    border-radius: 30px;
+    border-radius: 25px;
 }
 
-/* زر الشراء */
+/* زر شراء */
 .buy-btn {
     background: linear-gradient(45deg, #ff003c, #cc0030);
-    padding: 22px;
+    padding: 28px;
     display: block;
     text-decoration: none;
     color: white;
-    border-radius: 22px;
-    margin-top: 15px;
-    font-size: 32px;
+    border-radius: 30px;
+    margin-top: 20px;
+    font-size: 35px;
 }
 
-/* زر إغلاق */.close-btn {
+/* زر إغلاق – نفس حجم زر الشراء */
+.close-btn {
     background: #aa0000;
-    padding: 30px;
+    padding: 28px;
     width: 100%;
     border-radius: 30px;
     color: white;
-    margin-top: 20px;
-    font-size: 40px;
+    margin-top: 18px;
+    font-size: 35px;
     font-weight: bold;
-    text-align: center;
     border: none;
-    display: block;
-}
-
 }
 </style>
 
@@ -137,6 +145,7 @@ body {
 
 <div class="bg-dark">
 
+    <h1 class="title">جميع الحسابات</h1>
 
 <div class="grid">
 
@@ -219,5 +228,3 @@ function closeModal() {
 
 </body>
 </html>
-
-
