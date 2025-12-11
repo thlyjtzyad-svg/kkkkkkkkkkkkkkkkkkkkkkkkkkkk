@@ -8,55 +8,77 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap');
 
+/* الخلفية الجديدة المتناسقة */
 body {
     margin: 0;
     font-family: "Cairo", sans-serif;
-    background: url('https://iili.io/f5vZ3e2.jpg') no-repeat center top;
-    background-size: cover;
+
+    /* خلفية تظهر كاملة بدون قص */
+    background: #000 url('https://iili.io/f5vZ3e2.jpg') no-repeat center top;
+    background-size: contain;
+    background-attachment: fixed;
+    background-color: #000;
+
     height: 100vh;
     color: white;
     text-align: center;
 }
 
+/* طبقة تعتيم فوق الخلفية */
 .overlay {
-    background: rgba(0,0,0,0.75);
-    backdrop-filter: blur(5px);
+    background: rgba(0,0,0,0.70);
+    backdrop-filter: blur(4px);
     width: 100%;
     height: 100%;
     padding-top: 120px;
 }
 
-/* تكبير الشعار ×2 */
+/* الشعار — مكبر + يطلع وينزل + Glow */
 .logo {
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
     border: 7px solid #ff003c;
     margin-bottom: 30px;
+
+    animation: float 4s ease-in-out infinite, glow 2s infinite alternate;
 }
 
-/* تكبير العنوان */
+/* حركة طلوع ونزول */
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-22px); }
+    100% { transform: translateY(0px); }
+}
+
+/* إضاءة حمراء حول الشعار */
+@keyframes glow {
+    from { box-shadow: 0 0 18px #ff003c; }
+    to   { box-shadow: 0 0 45px #ff003c; }
+}
+
+/* العنوان */
 .title {
-    font-size: 50px;
+    font-size: 55px;
     font-weight: 900;
 }
 
-/* تكبير الوصف */
+/* الوصف */
 .desc {
     margin-top: 25px;
-    font-size: 50px;
+    font-size: 42px;
 }
 
 .more-text {
     margin-top: 10px;
-    font-size: 40px;
+    font-size: 32px;
     opacity: 0.9;
 }
 
-/* تكبير الزر جداً */
+/* زر عرض الحسابات — نبض + إضاءة */
 .btn {
     background: linear-gradient(45deg, #ff003c, #cc0030);
-    padding: 100px 100px;
+    padding: 30px 70px;
     border-radius: 50px;
     text-decoration: none;
     color: white;
@@ -64,30 +86,41 @@ body {
     margin-top: 50px;
     display: inline-block;
     font-weight: bold;
+
+    box-shadow: 0 0 25px rgba(255, 0, 60, 0.7);
+    animation: pulse 1.8s infinite;
 }
+
+/* حركة النبض */
+@keyframes pulse {
+    0%   { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,60,0.4); }
+    50%  { transform: scale(1.10); box-shadow: 0 0 45px rgba(255,0,60,1); }
+    100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,60,0.4); }
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="overlay">
+
+    <!-- الشعار -->
     <img src="https://iili.io/f5vZ3e2.jpg" class="logo">
 
-<h1 class="title">متجر كايزر لبيع حسابات فري فاير</h1>
-    <p class="desc">حسابات نادرة — ضمان كامل — سكنات قوية</p>
-    <p class="more-text">أقوى الحسابات — مجموعات أسطورية — تحديث أسبوعي — أسعار مناسبة🔥</p>
+    <!-- النصوص -->
+    <h1 class="title">متجر كايزر لبيع حسابات فري فاير</h1>
 
+    <p class="desc">حسابات نادرة — ضمان كامل — سكنات قوية</p>
+
+    <p class="more-text">
+        أقوى الحسابات — مجموعات أسطورية — تحديث أسبوعي — أسعار مناسبة🔥
+    </p>
+
+    <!-- زر الحسابات -->
     <a href="accounts.html" class="btn">عرض صفحة الحسابات</a>
+
 </div>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
