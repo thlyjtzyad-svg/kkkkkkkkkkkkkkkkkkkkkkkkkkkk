@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kaiser Store | الصفحة الرئيسية</title>
+<title>Kaiser Store | الرئيسية</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
@@ -15,38 +14,53 @@ body {
     background: url('https://iili.io/f5vZ3e2.jpg') no-repeat center top;
     background-size: cover;
     height: 100vh;
-    text-align: center;
     color: white;
+    text-align: center;
 }
 
 .overlay {
-    width: 100%;
-    height: 100%;
     background: rgba(0,0,0,0.65);
     backdrop-filter: blur(4px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
 }
 
 .logo {
-    width: 200px;
-    height: 200px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
-    border: 4px solid #ff003c;
-    margin-bottom: 20px;
+    border: 6px solid #ff003c;
+    margin-bottom: 25px;
+}
+
+.title {
+    font-size: 34px;
+    font-weight: 900;
+}
+
+.desc {
+    margin-top: 10px;
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.more-text {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.8;
 }
 
 .btn {
     background: linear-gradient(45deg, #ff003c, #cc0030);
-    padding: 14px 30px;
-    border-radius: 30px;
+    padding: 16px 34px;
+    border-radius: 35px;
     text-decoration: none;
     color: white;
-    font-size: 22px;
-    margin-top: 20px;
+    font-size: 24px;
+    margin-top: 30px;
     display: inline-block;
+    font-weight: bold;
 }
 </style>
 </head>
@@ -55,10 +69,12 @@ body {
 
 <div class="overlay">
     <img src="https://iili.io/f5vZ3e2.jpg" class="logo">
-    <h1>متجر كايزر لبيع حسابات فري فاير</h1>
-    <p>حسابات نادرة — ضمان كامل — سكنات قوية</p>
 
-    <!-- يفتح صفحة الحسابات -->
+    <h1 class="title">متجر كايزر لبيع حسابات فري فاير</h1>
+
+    <p class="desc">حسابات نادرة — ضمان كامل — سكنات قوية</p>
+    <p class="more-text">أقوى الحسابات العربية — مجموعات نادرة — تحديثات أسبوعية — أسعار منافسة🔥</p>
+
     <a href="accounts.html" class="btn">عرض الحسابات</a>
 </div>
 
