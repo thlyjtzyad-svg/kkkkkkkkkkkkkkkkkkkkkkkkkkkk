@@ -22,30 +22,43 @@ body {
     background: rgba(0,0,0,0.8);
     backdrop-filter: blur(6px);
     min-height: 100vh;
-    padding-bottom: 50px;
+    padding-bottom: 150px; /* مساحة لزر الرجوع */
 }
 
-/* العنوان */
+/* عنوان أعلى الصفحة */
 .title {
-    font-size: 60px;
+    font-size: 55px;
     font-weight: 900;
+    text-align: center;
+    margin-top: 40px;
 }
 
-/* زر الرجوع */
+/* زر الرجوع أسفل الصفحة */
 .back-btn {
-    display: inline-block;
-    margin-top: 50px;
-    background: #ff003c;
-    padding: 40px 60px;
-    border-radius: 60px;
-    color: white;
+    background: linear-gradient(45deg, #ff003c, #cc0030);
+    padding: 30px 80px;
+    border-radius: 50px;
     text-decoration: none;
-    font-size: 40px;
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    display: block;
+    width: max-content;
+    margin: 60px auto 0 auto;
+    box-shadow: 0 0 30px rgba(255,0,60,0.7);
+    animation: pulse 1.8s infinite;
+}
+
+/* حركة نبض */
+@keyframes pulse {
+    0%   { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,60,0.6); }
+    50%  { transform: scale(1.07); box-shadow: 0 0 45px rgba(255,0,60,1); }
+    100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,60,0.6); }
 }
 
 /* شبكة الحسابات */
 .grid {
-    padding: 60px;
+    padding: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 60px;
@@ -61,10 +74,10 @@ body {
     transition: 0.3s;
 }
 
-/* تكبير الصور */
+/* الصور */
 .card img {
     width: 100%;
-    height: 600px;
+    height: 650px;
     object-fit: cover;
     border-bottom: 8px solid #ff003c;
 }
@@ -90,7 +103,7 @@ body {
 .modal-box {
     background: #111;
     padding: 50px;
-    width: 110%;
+    width: 90%;
     max-width: 700px;
     border-radius: 30px;
     text-align: center;
@@ -104,24 +117,24 @@ body {
 /* زر الشراء */
 .buy-btn {
     background: linear-gradient(45deg, #ff003c, #cc0030);
-    padding: 18px;
+    padding: 22px;
     display: block;
     text-decoration: none;
     color: white;
-    border-radius: 30px;
+    border-radius: 22px;
     margin-top: 15px;
-    font-size: 26px;
+    font-size: 32px;
 }
 
 /* زر إغلاق */
 .close-btn {
     background: #700;
-    padding: 16px;
+    padding: 18px;
     width: 100%;
-    border-radius: 12px;
+    border-radius: 15px;
     color: white;
     margin-top: 15px;
-    font-size: 22px;
+    font-size: 26px;
 }
 </style>
 
@@ -131,11 +144,7 @@ body {
 
 <div class="bg-dark">
 
-<header>
-    جميع الحسابات 5555
-    <br>
-    <a href="index.html" class="back-btn">رجوع</a>
-</header>
+    <h1 class="title">جميع الحسابات</h1>
 
 <div class="grid">
 
@@ -143,7 +152,7 @@ body {
     <div class="card" onclick="openModal(
         'https://iili.io/f5Uld8B.md.jpg',
         'حساب ساكورا لفل 83',
-        '• لفل 83<br>• سكنات نادرة جداً<br>• باسات قديمة<br>• تطويرات أسلحة'
+        '• لفل 83<br>• سكنات نادرة<br>• باسات قديمة<br>• تطويرات أسلحة'
     )">
         <img src="https://iili.io/f5Uld8B.md.jpg">
         <div class="card-content">حساب ساكورا لفل 83</div>
@@ -153,7 +162,7 @@ body {
     <div class="card" onclick="openModal(
         'https://iili.io/f5UGS1a.md.jpg',
         'حساب الحركات النادرة',
-        '• أنيماشن أسطوري<br>• رقصات نادرة<br>• سكنات مطورة'
+        '• رقصات نادرة<br>• أنيماشن أسطوري<br>• سكنات مطورة'
     )">
         <img src="https://iili.io/f5UGS1a.md.jpg">
         <div class="card-content">حساب الحركات النادرة</div>
@@ -162,8 +171,8 @@ body {
     <!-- حساب 3 -->
     <div class="card" onclick="openModal(
         'https://iili.io/f5UhDJa.md.jpg',
-        'حساب شعار ذهبي لفل 79',
-        '• شعار ذهبي<br>• تطويرات قوية<br>• سكنات نادرة'
+        'حساب شعار ذهبي 79',
+        '• لفل 79<br>• شعار ذهبي<br>• تطويرات قوية'
     )">
         <img src="https://iili.io/f5UhDJa.md.jpg">
         <div class="card-content">حساب شعار ذهبي 79</div>
@@ -173,7 +182,7 @@ body {
     <div class="card" onclick="openModal(
         'https://iili.io/f5UwKCB.md.jpg',
         'حساب الكريمنال',
-        '• لفل 68<br>• سكنات كريمنال نادرة<br>• تطويرات أسلحة'
+        '• لفل 68<br>• سكنات كريمنال<br>• تطويرات أسلحة'
     )">
         <img src="https://iili.io/f5UwKCB.md.jpg">
         <div class="card-content">حساب الكريمنال</div>
@@ -181,14 +190,17 @@ body {
 
 </div>
 
+<!-- زر الرجوع أسفل الصفحة -->
+<a href="index.html" class="back-btn">رجوع</a>
+
 </div>
 
 <!-- MODAL -->
 <div id="modal" class="modal">
     <div class="modal-box">
         <img id="modal-img">
-        <h2 id="modal-title" style="font-size: 30px;"></h2>
-        <p id="modal-details" style="font-size: 24px;"></p>
+        <h2 id="modal-title" style="font-size: 34px;"></h2>
+        <p id="modal-details" style="font-size: 28px;"></p>
 
         <a id="buy-link" class="buy-btn" target="_blank">شراء الآن</a>
 
@@ -215,5 +227,3 @@ function closeModal() {
 
 </body>
 </html>
-
-
