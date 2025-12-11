@@ -12,61 +12,73 @@
 body {
     margin: 0;
     font-family: "Cairo", sans-serif;
-    background: #000;
+    background: url('https://iili.io/f5vZ3e2.jpg') no-repeat center top fixed;
+    background-size: cover;
     color: white;
+}
+
+/* خلفية غامقة فوق الصورة */
+.bg-dark {
+    background: rgba(0,0,0,0.78);
+    backdrop-filter: blur(5px);
+    min-height: 100vh;
+    padding-bottom: 40px;
 }
 
 /* Header */
 header {
     text-align: center;
-    padding: 25px;
-    background: #111;
-    font-size: 28px;
-    font-weight: 700;
+    padding: 35px 15px;
+    font-size: 32px;
+    font-weight: 800;
 }
 
 /* Back Button */
 .back-btn {
     display: inline-block;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 10px;
     background: #ff003c;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 12px 28px;
+    border-radius: 25px;
     color: white;
     text-decoration: none;
+    font-size: 18px;
 }
 
 /* Cards Grid */
 .grid {
-    padding: 25px;
+    padding: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
 }
 
 .card {
-    background: #111;
-    border-radius: 15px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 18px;
     overflow: hidden;
     cursor: pointer;
-    border: 1px solid #222;
+    border: 2px solid #ff003c;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(255,0,50,0.3);
+    transform: scale(1.04);
+    box-shadow: 0 0 25px rgba(255,0,50,0.6);
 }
 
 .card img {
     width: 100%;
-    height: 260px;
+    height: 320px;
     object-fit: cover;
+    border-bottom: 2px solid #ff003c;
 }
 
 .card-content {
-    padding: 15px;
+    padding: 18px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
 }
 
 /* MODAL */
@@ -74,20 +86,18 @@ header {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.9);
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    backdrop-filter: blur(6px);
 }
 
 .modal-box {
     background: #111;
     padding: 20px;
     width: 90%;
-    max-width: 420px;
+    max-width: 450px;
     border-radius: 15px;
-    color: white;
     text-align: center;
 }
 
@@ -103,26 +113,31 @@ header {
     text-decoration: none;
     color: white;
     border-radius: 25px;
-    margin-top: 10px;
+    margin-top: 12px;
+    font-size: 20px;
 }
 
 .close-btn {
     background: #700;
     padding: 10px;
     width: 100%;
-    margin-top: 10px;
     border-radius: 10px;
     color: white;
+    margin-top: 10px;
+    font-size: 18px;
 }
 </style>
+
 </head>
 
 <body>
 
+<div class="bg-dark">
+
 <header>
     جميع الحسابات المتوفرة
     <br>
-    <a href="index.html" class="back-btn">عودة إلى الصفحة الرئيسية</a>
+    <a href="index.html" class="back-btn">عودة للصفحة الرئيسية</a>
 </header>
 
 <div class="grid">
@@ -134,7 +149,7 @@ header {
         '• لفل 83<br>• سكنات نادرة جداً<br>• باسات قديمة<br>• تطويرات أسلحة'
     )">
         <img src="https://iili.io/f5Uld8B.md.jpg">
-        <div class="card-content"><h3>حساب ساكورا لفل 83</h3></div>
+        <div class="card-content">حساب ساكورا لفل 83</div>
     </div>
 
     <!-- حساب 2 -->
@@ -144,7 +159,7 @@ header {
         '• أنيماشن أسطوري<br>• رقصات نادرة<br>• سكنات مطورة'
     )">
         <img src="https://iili.io/f5UGS1a.md.jpg">
-        <div class="card-content"><h3>حساب الحركات النادرة</h3></div>
+        <div class="card-content">حساب الحركات النادرة</div>
     </div>
 
     <!-- حساب 3 -->
@@ -154,7 +169,7 @@ header {
         '• شعار ذهبي<br>• تطويرات قوية<br>• سكنات نادرة'
     )">
         <img src="https://iili.io/f5UhDJa.md.jpg">
-        <div class="card-content"><h3>حساب شعار ذهبي 79</h3></div>
+        <div class="card-content">حساب شعار ذهبي 79</div>
     </div>
 
     <!-- حساب 4 -->
@@ -164,8 +179,10 @@ header {
         '• لفل 68<br>• سكنات كريمنال نادرة<br>• تطويرات أسلحة'
     )">
         <img src="https://iili.io/f5UwKCB.md.jpg">
-        <div class="card-content"><h3>حساب الكريمنال</h3></div>
+        <div class="card-content">حساب الكريمنال</div>
     </div>
+
+</div>
 
 </div>
 
@@ -189,7 +206,7 @@ function openModal(img, title, details) {
     document.getElementById("modal-details").innerHTML = details;
 
     document.getElementById("buy-link").href =
-        "https://wa.me/967770117387?text=أريد شراء " + title;
+        "https://wa.me/967770117387?text=أريد شراء: " + title;
 
     document.getElementById("modal").style.display = "flex";
 }
