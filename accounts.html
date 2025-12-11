@@ -7,7 +7,7 @@
 <title>Kaiser Store | الحسابات</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap');
 
 body {
     margin: 0;
@@ -17,71 +17,69 @@ body {
     color: white;
 }
 
-/* خلفية غامقة فوق الصورة */
+/* خلفية غامقة */
 .bg-dark {
-    background: rgba(0,0,0,0.78);
-    backdrop-filter: blur(5px);
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(6px);
     min-height: 100vh;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
-/* Header */
+/* العنوان */
 header {
     text-align: center;
-    padding: 35px 15px;
-    font-size: 32px;
-    font-weight: 800;
+    padding: 40px 20px;
+    font-size: 40px;
+    font-weight: 900;
 }
 
-/* Back Button */
+/* زر الرجوع */
 .back-btn {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
     background: #ff003c;
-    padding: 12px 28px;
-    border-radius: 25px;
+    padding: 16px 35px;
+    border-radius: 30px;
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 26px;
 }
 
-/* Cards Grid */
+/* شبكة الحسابات */
 .grid {
-    padding: 30px;
+    padding: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 35px;
 }
 
+/* البطاقة */
 .card {
-    background: rgba(0,0,0,0.7);
-    border-radius: 18px;
+    background: rgba(0,0,0,0.75);
+    border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
-    border: 2px solid #ff003c;
+    border: 3px solid #ff003c;
     transition: 0.3s;
 }
 
-.card:hover {
-    transform: scale(1.04);
-    box-shadow: 0 0 25px rgba(255,0,50,0.6);
-}
-
+/* تكبير الصور */
 .card img {
     width: 100%;
-    height: 320px;
+    height: 420px;
     object-fit: cover;
-    border-bottom: 2px solid #ff003c;
+    border-bottom: 3px solid #ff003c;
 }
 
+/* اسم الحساب */
 .card-content {
-    padding: 18px;
-    font-size: 20px;
-    font-weight: 700;
+    padding: 20px;
+    font-size: 28px;
     text-align: center;
+    font-weight: 700;
 }
 
-/* MODAL */
+/* مودال */
 .modal {
     display: none;
     position: fixed;
@@ -89,42 +87,43 @@ header {
     background: rgba(0,0,0,0.9);
     justify-content: center;
     align-items: center;
-    z-index: 9999;
 }
 
 .modal-box {
     background: #111;
-    padding: 20px;
+    padding: 25px;
     width: 90%;
-    max-width: 450px;
-    border-radius: 15px;
+    max-width: 520px;
+    border-radius: 18px;
     text-align: center;
 }
 
 .modal-box img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
+/* زر الشراء */
 .buy-btn {
     background: linear-gradient(45deg, #ff003c, #cc0030);
-    padding: 12px;
+    padding: 18px;
     display: block;
     text-decoration: none;
     color: white;
-    border-radius: 25px;
-    margin-top: 12px;
-    font-size: 20px;
+    border-radius: 30px;
+    margin-top: 15px;
+    font-size: 26px;
 }
 
+/* زر إغلاق */
 .close-btn {
     background: #700;
-    padding: 10px;
+    padding: 16px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
     color: white;
-    margin-top: 10px;
-    font-size: 18px;
+    margin-top: 15px;
+    font-size: 22px;
 }
 </style>
 
@@ -135,9 +134,9 @@ header {
 <div class="bg-dark">
 
 <header>
-    جميع الحسابات المتوفرة
+    جميع الحسابات 5555
     <br>
-    <a href="index.html" class="back-btn">عودة للصفحة الرئيسية</a>
+    <a href="index.html" class="back-btn">رجوع</a>
 </header>
 
 <div class="grid">
@@ -190,8 +189,8 @@ header {
 <div id="modal" class="modal">
     <div class="modal-box">
         <img id="modal-img">
-        <h2 id="modal-title"></h2>
-        <p id="modal-details"></p>
+        <h2 id="modal-title" style="font-size: 30px;"></h2>
+        <p id="modal-details" style="font-size: 24px;"></p>
 
         <a id="buy-link" class="buy-btn" target="_blank">شراء الآن</a>
 
