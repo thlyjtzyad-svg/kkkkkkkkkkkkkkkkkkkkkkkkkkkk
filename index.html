@@ -2,26 +2,20 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kaiser Store | الرئيسية</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap');
 
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: "Cairo", sans-serif;
-}
-
 /* الخلفية */
 body {
-    background: url('https://iili.io/f5vZ3e2.jpg') no-repeat center top;
-    background-size: contain;   /* ✅ الحل */
-    background-color: #000;
+    margin: 0;
+    font-family: "Cairo", sans-serif;
+    background: url('https://iili.io/f5vZ3e2.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
     color: white;
     text-align: center;
 }
@@ -29,118 +23,113 @@ body {
 /* طبقة التعتيم */
 .overlay {
     min-height: 100vh;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(4px);
-    padding: 100px 20px 120px;
-    box-sizing: border-box;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(5px);
+    padding-top: 120px;
+    padding-bottom: 120px;
 }
 
 /* الشعار */
 .logo {
-    width: 300px;
-    max-width: 80%;
+    width: 420px;
+    height: 420px;
     border-radius: 50%;
-    border: 6px solid #ff003c;
+    border: 7px solid #ff003c;
     animation: float 4s ease-in-out infinite, glow 2s infinite alternate;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-/* حركة */
 @keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0px); }
 }
 
 @keyframes glow {
-    from { box-shadow: 0 0 15px #ff003c; }
-    to   { box-shadow: 0 0 35px #ff003c; }
+    from { box-shadow: 0 0 18px #ff003c; }
+    to   { box-shadow: 0 0 40px #ff003c; }
 }
 
-/* النص */
+/* النصوص */
 .title {
-    font-size: 42px;
+    font-size: 60px;
     font-weight: 900;
-    margin-bottom: 15px;
 }
 
 .desc {
-    font-size: 28px;
-    margin-bottom: 10px;
+    margin-top: 22px;
+    font-size: 45px;
 }
 
 .more-text {
-    font-size: 22px;
+    margin-top: 10px;
+    font-size: 38px;
     opacity: 0.9;
 }
 
-/* زر */
+/* زر الحسابات */
 .btn {
-    margin-top: 40px;
+    margin-top: 50px;
     display: inline-block;
-    padding: 20px 50px;
+    padding: 30px 75px;
     background: linear-gradient(45deg, #ff003c, #cc0030);
-    border-radius: 50px;
-    font-size: 26px;
+    border-radius: 55px;
+    font-size: 45px;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    box-shadow: 0 0 25px rgba(255,0,60,0.8);
+    box-shadow: 0 0 30px rgba(255,0,60,0.7);
     animation: pulse 1.8s infinite;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-    100% { transform: scale(1); }
+    0% { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,60,0.5); }
+    50% { transform: scale(1.09); box-shadow: 0 0 50px rgba(255,0,60,1); }
+    100% { transform: scale(1); box-shadow: 0 0 20px rgba(255,0,60,0.5); }
 }
 
-/* فوتر */
+/* ====== الفوتر ====== */
 footer {
-    margin-top: 80px;
-    padding: 40px 20px;
-    background: rgba(0,0,0,0.9);
-    border-top: 2px solid #ff003c;
+    margin-top: 120px;
+    padding: 60px 20px;
+    background: rgba(0,0,0,0.85);
+    border-top: 3px solid #ff003c;
 }
 
-footer a {
-    display: block;
-    color: white;
-    font-size: 22px;
+.footer-title {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.contact-links a {
     text-decoration: none;
-    margin: 15px auto;
-    width: fit-content;
-    padding: 12px 30px;
-    border: 2px solid #ff003c;
+    font-size: 36px;
+    color: white;
+    background: #111;
+    padding: 25px 50px;
     border-radius: 40px;
+    width: fit-content;
+    border: 3px solid #ff003c;
+    transition: 0.3s;
 }
 
-footer a:hover {
+.contact-links a:hover {
     background: #ff003c;
+    transform: scale(1.05);
 }
 
-/* 📱 تحسين خاص للموبايل */
-@media (max-width: 600px) {
-    body {
-        background-size: contain;
-    }
-
-    .logo {
-        width: 260px;
-    }
-
-    .title {
-        font-size: 34px;
-    }
-
-    .desc {
-        font-size: 24px;
-    }
-
-    .btn {
-        font-size: 24px;
-        padding: 18px 45px;
-    }
+.copyright {
+    margin-top: 40px;
+    font-size: 28px;
+    opacity: 0.7;
 }
 </style>
 </head>
@@ -154,13 +143,28 @@ footer a:hover {
     <h1 class="title">متجر كايزر لبيع حسابات فري فاير</h1>
 
     <p class="desc">حسابات نادرة — ضمان كامل — سكنات قوية</p>
-    <p class="more-text">تحديث أسبوعي — أسعار مناسبة 🔥</p>
 
-    <a href="accounts.html" class="btn">عرض صفحة 0000000</a>
+    <p class="more-text">أقوى الحسابات — مجموعات أسطورية — تحديث أسبوعي — أسعار مناسبة🔥</p>
 
+    <a href="accounts.html" class="btn">عرض صفحة الحسابات</a>
+
+    <!-- الفوتر -->
     <footer>
-        <a href="https://wa.me/967770117387" target="_blank">📱 واتساب</a>
-        <a href="https://instagram.com/KIZR_FF" target="_blank">📸 إنستغرام</a>
+        <div class="footer-title">📞 تواصل معنا</div>
+
+        <div class="contact-links">
+            <a href="https://wa.me/967770117387" target="_blank">
+                واتساب: 967770117387
+            </a>
+
+            <a href="https://instagram.com/KIZR_FF" target="_blank">
+                إنستغرام: KIZR_FF
+            </a>
+        </div>
+
+        <div class="copyright">
+            © 2025 Kaiser Store — جميع الحقوق محفوظة
+        </div>
     </footer>
 
 </div>
