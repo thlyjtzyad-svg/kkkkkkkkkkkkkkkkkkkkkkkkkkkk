@@ -1,229 +1,201 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moataz Store | الحسابات</title>
+<title>Kaiser Store | الحسابات</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
 
-/* ===== ألوان الشعار (زهري نيون) ===== */
-:root{
-    --pink-main:#ff2fcf;
-    --pink-dark:#c8009a;
-    --pink-glow:rgba(255,47,207,.9);
+body {
+    margin: 0;
+    font-family: "Cairo", sans-serif;
+    background: #000;
+    color: white;
 }
 
-/* الخلفية */
-body{
-    margin:0;
-    font-family:"Cairo",sans-serif;
-    background:url('https://i.postimg.cc/652Yg1H9/alshʿar.jpg') no-repeat center center fixed;
-    background-size:cover;
-    color:white;
+/* Header */
+header {
+    text-align: center;
+    padding: 25px;
+    background: #111;
+    font-size: 28px;
+    font-weight: 700;
 }
 
-
-/* العنوان */
-.title{
-    font-size:55px;
-    font-weight:900;
-    text-align:center;
-    padding:40px 10px;
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background: #ff003c;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
 }
 
-/* شبكة الحسابات */
-.grid{
-    padding:50px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(480px,1fr));
-    gap:55px;
+/* Cards Grid */
+.grid {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
 }
 
-/* البطاقة */
-.card{
-    background:rgba(0,0,0,.8);
-    border-radius:40px;
-    overflow:hidden;
-    cursor:pointer;
-    border:8px solid var(--pink-main);
-    box-shadow:0 0 35px var(--pink-glow);
-    transition:.3s;
-}
-.card:hover{
-    transform:scale(1.04);
+.card {
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #222;
+    transition: 0.3s;
 }
 
-/* صورة الحساب */
-.card img{
-    width:100%;
-    height:600px;
-    object-fit:cover;
-    border-bottom:8px solid var(--pink-main);
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(255,0,50,0.3);
 }
 
-/* اسم الحساب */
-.card-content{
-    padding:35px;
-    font-size:45px;
-    text-align:center;
-    font-weight:900;
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
 }
 
-/* زر الرجوع */
-.back-btn{
-    background:linear-gradient(45deg,var(--pink-main),var(--pink-dark));
-    padding:30px 75px;
-    border-radius:60px;
-    text-decoration:none;
-    color:white;
-    font-size:45px;
-    font-weight:900;
-    display:block;
-    width:max-content;
-    margin:80px auto 0;
-    box-shadow:0 0 45px var(--pink-glow);
-    animation:pulse 1.8s infinite;
-}
-@keyframes pulse{
-    0%{transform:scale(1);box-shadow:0 0 30px var(--pink-glow);}
-    50%{transform:scale(1.08);box-shadow:0 0 80px var(--pink-glow);}
-    100%{transform:scale(1);box-shadow:0 0 30px var(--pink-glow);}
+.card-content {
+    padding: 15px;
 }
 
-/* ===== المودال ===== */
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.9);
-    justify-content:center;
-    align-items:center;
-    z-index:999;
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(6px);
 }
 
-.modal-box{
-    background:#111;
-    padding:40px;
-    width:90%;
-    max-width:700px;
-    border-radius:35px;
-    text-align:center;
-    border:3px solid var(--pink-main);
+.modal-box {
+    background: #111;
+    padding: 20px;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
 }
 
-.modal-box img{
-    width:100%;
-    border-radius:25px;
+.modal-box img {
+    width: 100%;
+    border-radius: 10px;
 }
 
-/* زر الشراء */
-.buy-btn{
-    background:linear-gradient(45deg,var(--pink-main),var(--pink-dark));
-    padding:28px;
-    display:block;
-    text-decoration:none;
-    color:white;
-    border-radius:35px;
-    margin-top:20px;
-    font-size:35px;
-    font-weight:900;
-    box-shadow:0 0 35px var(--pink-glow);
+.buy-btn {
+    background: linear-gradient(45deg, #ff003c, #cc0030);
+    padding: 12px;
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-radius: 25px;
+    margin-top: 10px;
 }
 
-/* زر الإغلاق */
-.close-btn{
-    background:#000;
-    padding:28px;
-    width:100%;
-    border-radius:35px;
-    color:white;
-    margin-top:18px;
-    font-size:35px;
-    font-weight:900;
-    border:2px solid var(--pink-main);
+.close-btn {
+    background: #700;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: white;
 }
 </style>
 </head>
 
 <body>
 
-<div class="bg-dark">
-
-<h1 class="title">الحسابات المتوفرة</h1>
+<header>
+    جميع الحسابات المتوفرة
+    <br>
+    <a href="index.html" class="back-btn">عودة إلى الصفحة الرئيسية</a>
+</header>
 
 <div class="grid">
 
-<!-- حساب 1 -->
-<div class="card" onclick="openModal(
-'https://iili.io/f5Uld8B.md.jpg',
-'حساب ساكورا لفل 83',
-'• لفل 83<br>• سكنات نادرة<br>• باسات قديمة<br>• تطويرات أسلحة'
-)">
-<img src="https://iili.io/f5Uld8B.md.jpg">
-<div class="card-content">حساب ساكورا لفل 83</div>
-</div>
+    <!-- حساب 1 -->
+    <div class="card" onclick="openModal(
+        'https://iili.io/f5Uld8B.md.jpg',
+        'حساب ساكورا لفل 83',
+        '• لفل 83<br>• سكنات نادرة جداً<br>• باسات قديمة<br>• تطويرات أسلحة'
+    )">
+        <img src="https://iili.io/f5Uld8B.md.jpg">
+        <div class="card-content"><h3>حساب ساكورا لفل 83</h3></div>
+    </div>
 
-<!-- حساب 2 -->
-<div class="card" onclick="openModal(
-'https://iili.io/f5UGS1a.md.jpg',
-'حساب الحركات النادرة',
-'• رقصات نادرة<br>• أنيماشن أسطوري<br>• سكنات مطورة'
-)">
-<img src="https://iili.io/f5UGS1a.md.jpg">
-<div class="card-content">حساب الحركات النادرة</div>
-</div>
+    <!-- حساب 2 -->
+    <div class="card" onclick="openModal(
+        'https://iili.io/f5UGS1a.md.jpg',
+        'حساب الحركات النادرة',
+        '• أنيماشن أسطوري<br>• رقصات نادرة<br>• سكنات مطورة'
+    )">
+        <img src="https://iili.io/f5UGS1a.md.jpg">
+        <div class="card-content"><h3>حساب الحركات النادرة</h3></div>
+    </div>
 
-<!-- حساب 3 -->
-<div class="card" onclick="openModal(
-'https://iili.io/f5UhDJa.md.jpg',
-'حساب شعار ذهبي 79',
-'• لفل 79<br>• شعار ذهبي<br>• تطويرات قوية'
-)">
-<img src="https://iili.io/f5UhDJa.md.jpg">
-<div class="card-content">حساب شعار ذهبي 79</div>
-</div>
+    <!-- حساب 3 -->
+    <div class="card" onclick="openModal(
+        'https://iili.io/f5UhDJa.md.jpg',
+        'حساب شعار ذهبي لفل 79',
+        '• شعار ذهبي<br>• تطويرات قوية<br>• سكنات نادرة'
+    )">
+        <img src="https://iili.io/f5UhDJa.md.jpg">
+        <div class="card-content"><h3>حساب شعار ذهبي 79</h3></div>
+    </div>
 
-<!-- حساب 4 -->
-<div class="card" onclick="openModal(
-'https://iili.io/f5UwKCB.md.jpg',
-'حساب الكريمنال',
-'• لفل 68<br>• سكنات كريمنال<br>• تطويرات أسلحة'
-)">
-<img src="https://iili.io/f5UwKCB.md.jpg">
-<div class="card-content">حساب الكريمنال</div>
-</div>
-
-</div>
-
-<a href="index.html" class="back-btn">رجوع</a>
+    <!-- حساب 4 -->
+    <div class="card" onclick="openModal(
+        'https://iili.io/f5UwKCB.md.jpg',
+        'حساب الكريمنال',
+        '• لفل 68<br>• سكنات كريمنال نادرة<br>• تطويرات أسلحة'
+    )">
+        <img src="https://iili.io/f5UwKCB.md.jpg">
+        <div class="card-content"><h3>حساب الكريمنال</h3></div>
+    </div>
 
 </div>
 
-<!-- المودال -->
+<!-- MODAL -->
 <div id="modal" class="modal">
-<div class="modal-box">
-<img id="modal-img">
-<h2 id="modal-title" style="font-size:34px;"></h2>
-<p id="modal-details" style="font-size:28px;"></p>
+    <div class="modal-box">
+        <img id="modal-img">
+        <h2 id="modal-title"></h2>
+        <p id="modal-details"></p>
 
-<a id="buy-link" class="buy-btn" target="_blank">شراء الآن</a>
-<button class="close-btn" onclick="closeModal()">إغلاق</button>
-</div>
+        <a id="buy-link" class="buy-btn" target="_blank">شراء الآن</a>
+
+        <button class="close-btn" onclick="closeModal()">إغلاق</button>
+    </div>
 </div>
 
 <script>
-function openModal(img,title,details){
-    document.getElementById("modal-img").src=img;
-    document.getElementById("modal-title").innerHTML=title;
-    document.getElementById("modal-details").innerHTML=details;
-    document.getElementById("buy-link").href=
-    "https://wa.me/962775355332?text=أريد شراء: "+title;
-    document.getElementById("modal").style.display="flex";
+function openModal(img, title, details) {
+    document.getElementById("modal-img").src = img;
+    document.getElementById("modal-title").innerHTML = title;
+    document.getElementById("modal-details").innerHTML = details;
+
+    document.getElementById("buy-link").href =
+        "https://wa.me/967770117387?text=أريد شراء " + title;
+
+    document.getElementById("modal").style.display = "flex";
 }
-function closeModal(){
-    document.getElementById("modal").style.display="none";
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
 }
 </script>
 
